@@ -1,0 +1,259 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+body {
+  position: relative;
+  height: 100vh;
+  font: 14px 'Ubuntu', -apple-system, system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+
+  background: #ffffff;
+}
+
+*:focus {
+  outline: none;
+}
+
+button {
+  border: 0;
+  background: none;
+
+  cursor: pointer;
+}
+
+li {
+  list-style: none !important;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:active,
+a:link {
+  color: #b8ace0;
+}
+
+@keyframes apearLeftToRight {
+  from {
+    opacity: 0;
+    transform: translateX(-80vh);
+    transition: transform .5s;
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+    transition: transform .5s;
+  }
+}
+
+@keyframes apearRightToLeft {
+  from {
+    opacity: 0;
+    transform: translateX(50vh);
+  } to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+#main {
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#main .section-container {  
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+@media(min-width: 320px) and (max-width: 900px) {
+  .section-container {
+    margin: 0 15px;
+  }
+
+  .section-card {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+
+    animation: 0;
+  }
+
+  .section-card-img img {
+    margin-right: 0;
+  }
+
+  .section-content {
+    text-align: center;
+    animation: 0;
+  }
+  
+}
+
+#main .section-card {
+  padding: 30px 50px;
+
+  border: 0;
+  border-radius: 8px;
+
+  background: transparent;
+  box-shadow: 2px 2px 50px rgba(0,0,0,.15);
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  animation: apearRightToLeft 2s;
+}
+
+#main .section-card-img img {
+  width: 150px;
+  height: 150px;
+
+  margin-right: 25px;
+
+  border-radius: 50%;
+
+  flex-shrink: 0;
+}
+
+#main .section-content {
+  animation: apearLeftToRight 2s;
+}
+
+#main .section-content .section-title {
+  margin-bottom: 20px;
+}
+
+#main .section-content .section-title h1{
+  margin-bottom: 5px;
+  font-size: 32px;
+
+  color: #b8ace0;
+}
+
+#main .section-container .button-download {
+  position: relative;
+  color: #b8ace0;
+  padding: 5px 8px;
+
+  border-radius: 4px;
+  border: 1px solid #b8ace0;
+}
+
+#main .section-container .button-download::before{
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+  width: 0%;
+	height: 100%;
+  transition: all 0.3s;
+}
+
+#main .section-container .button-download:hover::before {
+  background: #b8ace0;
+  width: 100%;
+  z-index: -2;
+}
+
+#main .section-container .button-download:hover {
+  color: #fff;
+  transition: color 0.3s;
+}
+
+#main .section-content .section-title span {
+  font-weight: 800;
+  font-size: 18px;
+
+  color: #b9b9b9;
+}
+
+.footer {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  background: transparent;
+  text-align: center;
+}
+
+.footer .social-footer {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.footer .social-footer .content {
+  display: flex;
+
+  margin: 30px 0;
+}
+
+.footer .social-footer span {
+  color: #b9b9b9;
+  margin-bottom: 20px;
+} 
+
+.footer span .button {
+  height: 14px;
+  padding: 2px 5px;
+
+  font-size: 11px;
+  border-radius: 4px;
+  border: 1px solid #c5c9cc;
+
+  background: #eff3f6;
+}
+
+.footer span .button .fa {
+  margin-right: 2px;
+  font-size: 14px;
+}
+
+.footer .social-footer span a {
+  color: #24292e;
+}
+
+.footer .social-footer .content .content-icon {
+  width: 40px;
+  height: 40px;
+
+  margin: 0 10px;
+
+  border: 0;
+  border-radius: 4px;
+  background: #ffffff;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  box-shadow: 2px 2px 50px rgba(0,0,0,.15);
+  transition: transform 0.2s ease-in-out;
+}
+
+.footer .social-footer .content .content-icon:hover {
+  transform: translateY(-5px);
+}
+
+.footer .social-footer .content .content-icon i {
+  font-size: 25px;
+
+  color: #7f7f7f;
+}
+
+.footer .social-footer .content .content-icon i:hover {
+  color: #b8ace0; 
+}
+
