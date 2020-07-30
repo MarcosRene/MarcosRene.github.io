@@ -1,4 +1,4 @@
-const html = document.querySelector("html")
+const root = document.querySelector(":root")
 const checkbox = document.querySelector("input[name=theme]")
 
 const getStyle = (element, style) => 
@@ -7,7 +7,7 @@ const getStyle = (element, style) =>
         .getPropertyValue(style)
 
 const initialColors = {
-  backgroundBody: getStyle(html, "--background-body"),
+  backgroundBody: getStyle(root, "--background-body"),
 }
 
 const darkMode = {
@@ -19,7 +19,7 @@ const transformKey = key =>
 
 const changeColors = (colors) => {
     Object.keys(colors).map(key => 
-      html.style.setProperty(transformKey(key), colors[key]) 
+      root.style.setProperty(transformKey(key), colors[key]) 
     )
 }
 

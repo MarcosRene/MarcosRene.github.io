@@ -1,4 +1,4 @@
-html {
+:root {
   --primary: #b8ace0;
   --secondary: #ffffff;
 
@@ -61,23 +61,20 @@ a:link {
 }
 
 @media(min-width: 320px) and (max-width: 900px) {
-  .section-container {
+  .container {
     margin: 0 15px;
   }
 
-  .section-card {
+  .card {
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
   }
 
-  .section-card-img img {
-    margin-right: 0 !important;
-  }
-
-  .section-card-body {
+  .card-body {
     text-align: center;
+    margin-left: 0 !important;
   }
 }
 
@@ -91,7 +88,7 @@ a:link {
   }
 }
 
-#main .section-card {
+#main .card {
   padding: 30px 50px;
 
   border: 0;
@@ -107,11 +104,10 @@ a:link {
   animation: apearRightToLeft 2s;
 }
 
-#main .section-card-img img {
+#main .card-img img {
   width: 150px;
   height: 150px;
 
-  margin-right: 25px;
   border-radius: 50%;
 
   flex-shrink: 0;
@@ -129,22 +125,23 @@ a:link {
   }
 }
 
-#main .section-card-body {
+#main .card-body {
+  margin-left: 25px;
   animation: apearLeftToRight 2s;
 }
 
-#main .section-card-body .section-card-title {
+#main .card-body .card-title {
   margin-bottom: 20px;
 }
 
-#main .section-card-body .section-card-title h1{
+#main .card-body .card-title h1{
   margin-bottom: 5px;
   font-size: 32px;
 
   color: var(--primary);
 }
 
-#main .section-container .button-download {
+#main .container .button-download {
   position: relative;
   color: var(--primary);
   padding: 5px 8px;
@@ -153,7 +150,7 @@ a:link {
   border: 1px solid var(--primary);
 }
 
-#main .section-container .button-download::before {
+#main .container .button-download::before {
 	content: '';
 	position: absolute;
 	top: 0;
@@ -163,18 +160,18 @@ a:link {
   transition: all 0.3s;
 }
 
-#main .section-container .button-download:hover::before {
+#main .container .button-download:hover::before {
   background: var(--primary);
   width: 100%;
   z-index: -2;
 }
 
-#main .section-container .button-download:hover {
+#main .container .button-download:hover {
   color: var(--secondary);
   transition: color 0.3s;
 }
 
-#main .section-card-body .section-card-title span {
+#main .container .card-body .card-title span {
   font-weight: 800;
   font-size: 18px;
 
@@ -262,30 +259,31 @@ a:link {
   transition: color .2s;
 }
 
-.toggle {
+#main .toggle {
   position: absolute;
   top: 10px;
   right: 10px;
 }
 
-.toggle input[type=checkbox]{
+#main .toggle input[type=checkbox]{
   height: 0;
   width: 0;
   visibility: hidden;
 }
 
-.toggle label {
-  cursor: pointer;
+#main .toggle label {
+  position: relative;
   text-indent: -9999px;
   width: 52px;
   height: 27px;
   background: var(--grayish-blue);
   float: right;
   border-radius: 100px;
-  position: relative;
+  
+  cursor: pointer;
 }
 
-.toggle label::after{
+#main .toggle label::after{
   content: '';
   position: absolute;
   top: 3px;
@@ -298,15 +296,15 @@ a:link {
   transition: 0.3s;
 }
 
-.toggle input:checked + label {
+#main .toggle input:checked + label {
   background: var(--primary);
 }
 
-.toggle input:checked + label::after {
+#main .toggle input:checked + label::after {
   left: calc(100% - 5px);
   transform: translateX(-100%);
 }
 
-.toggle label:active:after {
+#main .toggle label:active:after {
   width: 45px;
 }
